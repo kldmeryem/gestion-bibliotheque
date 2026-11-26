@@ -38,4 +38,4 @@ Application console de gestion d'une bibliothèque, réalisée en Java avec Inte
 
 ## Auteur
 
-KALADA Meryem - Étudiante en M2 Ingénierie Informatique en Big Data et Cloud Computing
+KALADA Meryem - Étudiante en M2 Ingénierie Informatique (Big Data et Cloud Computing)
