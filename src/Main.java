@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Bibliotheque biblio = new Bibliotheque();
-        biblio.ajouterLivre(new Livre("Le Petit Prince", "Saint-Exupéry"));
-        biblio.ajouterLivre(new Livre("L'Alchimiste", "Paulo Coelho"));
 
         Scanner sc = new Scanner(System.in);
         int choix;
@@ -31,11 +29,15 @@ public class Main {
                     break;
                 case 2:
                     System.out.print("Titre : ");
-                    String titre = sc.nextLine();
+                    String titre = sc.nextLine().trim();
                     System.out.print("Auteur : ");
-                    String auteur = sc.nextLine();
-                    biblio.ajouterLivre(new Livre(titre, auteur));
-                    System.out.println("Livre ajouté.");
+                    String auteur = sc.nextLine().trim();
+                    if (titre.isEmpty() || auteur.isEmpty()) {
+                        System.out.println("Titre et auteur ne peuvent pas être vides.");
+                    } else {
+                        biblio.ajouterLivre(new Livre(titre, auteur));
+                        System.out.println("Livre ajouté.");
+                    }
                     break;
                 case 3:
                     System.out.print("Titre à emprunter : ");

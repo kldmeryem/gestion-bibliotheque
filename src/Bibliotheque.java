@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
 public class Bibliotheque {
-    private ArrayList<Livre> livres = new ArrayList<>();
+    private BaseDeDonnees bdd = new BaseDeDonnees();
+    private ArrayList<Livre> livres = bdd.lireTous();
 
     public void ajouterLivre(Livre livre) {
         livres.add(livre);
+        bdd.ajouter(livre);
     }
 
     public void afficherLivres() {
@@ -21,6 +23,7 @@ public class Bibliotheque {
         for (Livre l : livres) {
             if (l.getTitre().equalsIgnoreCase(titre) && l.isDisponible()) {
                 l.setDisponible(false);
+                bdd.changerDisponibilite(l.getTitre(), false);
                 return true;
             }
         }
@@ -31,6 +34,7 @@ public class Bibliotheque {
         for (Livre l : livres) {
             if (l.getTitre().equalsIgnoreCase(titre) && !l.isDisponible()) {
                 l.setDisponible(true);
+                bdd.changerDisponibilite(l.getTitre(), true);
                 return true;
             }
         }
