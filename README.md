@@ -1,13 +1,14 @@
-# Gestion de bibliothèque (Java)
+# Gestion de bibliothèque (Java + SQLite)
 
-Application console de gestion d'une bibliothèque, réalisée en Java avec IntelliJ IDEA. Projet d'apprentissage de la programmation orientée objet.
+Application console de gestion d'une bibliothèque, réalisée en Java avec IntelliJ IDEA. Les livres sont sauvegardés dans une base de données SQLite grâce à JDBC.
 
 ## Fonctionnalités
 
 - Afficher la liste des livres
-- Ajouter un livre (titre, auteur)
+- Ajouter un livre (titre, auteur) avec validation des saisies
 - Emprunter un livre
 - Rendre un livre
+- Sauvegarde persistante des données (SQLite)
 - Menu interactif en console
 
 ## Objectifs
@@ -16,11 +17,13 @@ Application console de gestion d'une bibliothèque, réalisée en Java avec Inte
 - Appliquer l'encapsulation (attributs privés, getters/setters)
 - Manipuler des collections (`ArrayList`)
 - Lire les saisies utilisateur avec `Scanner`
+- Connecter Java à une base de données avec JDBC (`PreparedStatement`)
 - Utiliser Git et GitHub pour le versionnement
 
 ## Technologies
 
 - Java 17+
+- SQLite (JDBC)
 - IntelliJ IDEA
 - Git / GitHub
 
@@ -28,6 +31,7 @@ Application console de gestion d'une bibliothèque, réalisée en Java avec Inte
 
 - `src/Livre.java` : classe représentant un livre (titre, auteur, disponibilité)
 - `src/Bibliotheque.java` : gestion de la liste des livres (ajout, affichage, emprunt, retour)
+- `src/BaseDeDonnees.java` : accès à la base SQLite (création de la table, insertion, lecture, mise à jour)
 - `src/Main.java` : point d'entrée avec le menu interactif
 
 ## Exemple d'utilisation
@@ -49,12 +53,16 @@ Votre choix :
    git clone https://github.com/kldmeryem/gestion-bibliotheque.git
    ```
 2. Ouvrir le dossier avec IntelliJ IDEA
-3. Lancer la classe `Main`
+3. Télécharger le driver `sqlite-jdbc` : https://github.com/xerial/sqlite-jdbc/releases
+4. L'ajouter au projet : `File > Project Structure > Libraries > + > Java`
+5. Lancer la classe `Main`
+
+Le fichier `bibliotheque.db` est créé automatiquement au premier lancement.
 
 ## Évolutions prévues
 
 - Gestion des membres et des emprunts par membre
-- Sauvegarde des données dans une base de données SQL (JDBC)
+- Migration vers Maven pour gérer les dépendances automatiquement
 - Tests unitaires avec JUnit
 
 ## Auteur
