@@ -2,12 +2,21 @@
 
 Application console de gestion d'une bibliothèque, réalisée en Java avec IntelliJ IDEA. Projet d'apprentissage de la programmation orientée objet.
 
+## Fonctionnalités
+
+- Afficher la liste des livres
+- Ajouter un livre (titre, auteur)
+- Emprunter un livre
+- Rendre un livre
+- Menu interactif en console
+
 ## Objectifs
 
-- Modéliser des entités avec des classes et des objets (`Livre`, ...)
+- Modéliser des entités avec des classes et des objets (`Livre`, `Bibliotheque`)
 - Appliquer l'encapsulation (attributs privés, getters/setters)
 - Manipuler des collections (`ArrayList`)
-- Construire un menu interactif en console
+- Lire les saisies utilisateur avec `Scanner`
+- Utiliser Git et GitHub pour le versionnement
 
 ## Technologies
 
@@ -18,7 +27,20 @@ Application console de gestion d'une bibliothèque, réalisée en Java avec Inte
 ## Structure du projet
 
 - `src/Livre.java` : classe représentant un livre (titre, auteur, disponibilité)
-- `src/Main.java` : point d'entrée de l'application
+- `src/Bibliotheque.java` : gestion de la liste des livres (ajout, affichage, emprunt, retour)
+- `src/Main.java` : point d'entrée avec le menu interactif
+
+## Exemple d'utilisation
+
+```
+=== MENU BIBLIOTHEQUE ===
+1. Afficher les livres
+2. Ajouter un livre
+3. Emprunter un livre
+4. Rendre un livre
+0. Quitter
+Votre choix :
+```
 
 ## Lancer le projet
 
@@ -31,10 +53,9 @@ Application console de gestion d'une bibliothèque, réalisée en Java avec Inte
 
 ## Évolutions prévues
 
-- Classe `Bibliotheque` pour gérer une liste de livres
-- Gestion des membres et des emprunts
-- Menu interactif en console
-- Sauvegarde des données dans une base de données SQL
+- Gestion des membres et des emprunts par membre
+- Sauvegarde des données dans une base de données SQL (JDBC)
+- Tests unitaires avec JUnit
 
 ## Auteur
 
